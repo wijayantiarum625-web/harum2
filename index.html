@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portofolio Harum Wijayanti 🍓</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff0f5;--bg2:#ffdce9;--card:#ffffff;--ink:#6b2a45;--soft:#a65a78;--pink:#ff8fb1;--berry:#e8456f;--leaf:#6cc18a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2b1420;--bg2:#3d1b2c;--card:#4a2234;--ink:#ffe3ee;--soft:#f0b5cb;--pink:#ff8fb1;--berry:#ff6b94}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;font-family:'Quicksand',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:'Pacifico','Brush Script MT',cursive;font-weight:400;margin:0}
+section{max-width:860px;margin:0 auto;padding:56px 20px}
+h2{font-size:2rem;color:var(--berry);text-align:center;margin-bottom:8px}
+.sub{text-align:center;color:var(--soft);margin:0 0 28px}
+/* hero */
+.hero{text-align:center;padding-top:48px;position:relative}
+@keyframes bob{50%{transform:translateY(-14px) rotate(4deg)}}
+.berry-big{width:110px;height:auto}
+[hidden]{display:none!important}
+.photo{position:relative;width:180px;margin:0 auto}
+.frame{cursor:pointer;width:180px;height:180px;border-radius:50%;border:6px solid var(--pink);box-shadow:0 0 0 6px var(--bg2),0 12px 30px rgba(232,69,111,.3);overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--card);animation:bob 3s ease-in-out infinite}
+.frame img{width:100%;height:100%;object-fit:cover;display:block}
+.badge{position:absolute;right:-4px;top:-8px;font-size:2rem;animation:bob 2.4s ease-in-out infinite}
+.photo-btns{display:flex;gap:8px;justify-content:center;margin-top:18px}
+.btn.small{padding:6px 16px;font-size:.85rem;box-shadow:0 3px 0 #b82e53}
+.btn.ghost{background:var(--card);color:var(--berry);border:2px solid var(--pink);box-shadow:none}
+.hero h1{font-size:clamp(2.2rem,9vw,3.6rem);color:var(--berry);margin:10px 0 4px}
+.hero p{margin:4px 0;color:var(--soft);font-size:1.1rem}
+.btn{display:inline-block;border:0;cursor:pointer;background:var(--berry);color:#fff;padding:11px 26px;border-radius:999px;font:700 1rem 'Quicksand',sans-serif;text-decoration:none;box-shadow:0 5px 0 #b82e53;transition:transform .15s}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 #b82e53}
+.float{position:fixed;top:-40px;font-size:22px;pointer-events:none;animation:fall linear infinite;opacity:.7;z-index:0}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+main,section,nav{position:relative;z-index:1}
+/* nav */
+nav{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:14px}
+nav a{color:var(--ink);text-decoration:none;background:var(--card);padding:6px 16px;border-radius:999px;font-weight:700;font-size:.9rem;border:2px solid var(--pink)}
+nav a:hover{background:var(--pink);color:#fff}
+/* cards */
+.card{background:var(--card);border-radius:28px;padding:26px;box-shadow:0 10px 30px rgba(232,69,111,.15);border:3px dashed var(--pink)}
+.about p{margin:0 0 12px}
+.quote{font-family:'Pacifico',cursive;color:var(--berry);text-align:center;font-size:1.2rem;margin-top:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{background:var(--bg2);padding:5px 14px;border-radius:999px;font-weight:700;font-size:.9rem}
+.proj{margin-bottom:28px}
+.proj h3{font-size:1.4rem;color:var(--berry);margin-bottom:4px}
+.proj .d{color:var(--soft);margin:0 0 14px}
+/* game 1 */
+.hud{display:flex;justify-content:space-between;font-weight:700;margin-bottom:8px}
+#arena{position:relative;height:300px;background:linear-gradient(var(--bg2),var(--bg));border-radius:20px;overflow:hidden;touch-action:manipulation;user-select:none}
+.drop{position:absolute;top:-40px;font-size:34px;cursor:pointer;animation:drop linear forwards}
+@keyframes drop{to{top:310px}}
+.pop{position:absolute;font-weight:700;color:var(--berry);animation:pop .6s forwards;pointer-events:none}
+@keyframes pop{to{transform:translateY(-40px);opacity:0}}
+#overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:rgba(255,240,245,.8);color:#6b2a45;text-align:center;padding:10px}
+/* quiz */
+.opt{display:block;width:100%;text-align:left;margin:8px 0;padding:12px 16px;border-radius:16px;border:2px solid var(--pink);background:var(--card);color:var(--ink);font:700 1rem 'Quicksand',sans-serif;cursor:pointer;transition:transform .15s}
+.opt:hover{transform:scale(1.02)}
+.opt.ok{background:#bdf0cf;border-color:var(--leaf);color:#1f5133;animation:jump .4s}
+.opt.no{background:#ffc2cf;border-color:var(--berry);color:#7a1630;animation:shake .4s}
+@keyframes jump{50%{transform:scale(1.05)}}
+@keyframes shake{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.bar{height:10px;background:var(--bg2);border-radius:99px;overflow:hidden;margin-bottom:14px}
+.bar i{display:block;height:100%;width:0;background:var(--berry);transition:width .4s}
+/* memory */
+#mem{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:380px;margin:0 auto}
+.c{aspect-ratio:1;perspective:500px;cursor:pointer;border:0;background:none;padding:0}
+.c div{width:100%;height:100%;position:relative;transition:transform .5s;transform-style:preserve-3d}
+.c.f div{transform:rotateY(180deg)}
+.c span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;border-radius:16px;backface-visibility:hidden;font-size:2rem}
+.c .b{background:var(--pink);border:3px solid #fff}
+.c .fr{background:var(--card);border:3px solid var(--pink);transform:rotateY(180deg)}
+.c.m .fr{background:#ffe0eb;animation:jump .5s}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}.tab{border:2px solid var(--pink);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 14px;font:700 .9rem 'Quicksand',sans-serif;cursor:pointer}.tab.on{background:var(--berry);color:#fff;border-color:var(--berry)}
+footer{text-align:center;padding:30px 20px 40px;color:var(--soft)}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+</style>
+</head>
+<body>
+<div id="rain" aria-hidden="true"></div>
+
+<section class="hero" id="home">
+  <div class="photo">
+    <label class="frame" for="file" title="Ketuk untuk ganti foto">
+   <img id="pic" alt="Foto Harum Wijayanti" hidden> 
+      <svg class="berry-big" id="ph" viewBox="0 0 120 130" aria-hidden="true">
+        <path d="M60 18c-8-14-26-12-30-4 12 0 20 4 30 10 10-6 18-10 30-10-4-8-22-10-30 4z" fill="#6cc18a"/>
+        <path d="M60 28C22 24 6 52 20 82c10 22 28 40 40 44 12-4 30-22 40-44 14-30-2-58-40-54z" fill="#ff6b94"/>
+        <path d="M60 28C30 26 14 46 18 70c8-26 28-38 42-40z" fill="#ff8fb1" opacity=".6"/>
+        <g fill="#ffe3a8"><ellipse cx="42" cy="56" rx="3" ry="5"/><ellipse cx="62" cy="52" rx="3" ry="5"/><ellipse cx="80" cy="60" rx="3" ry="5"/><ellipse cx="50" cy="78" rx="3" ry="5"/><ellipse cx="72" cy="80" rx="3" ry="5"/><ellipse cx="60" cy="100" rx="3" ry="5"/></g>
+        <circle cx="46" cy="68" r="4" fill="#6b2a45"/><circle cx="74" cy="68" r="4" fill="#6b2a45"/>
+        <path d="M54 76q6 6 12 0" stroke="#6b2a45" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="36" cy="76" r="6" fill="#ff9fba"/><circle cx="84" cy="76" r="6" fill="#ff9fba"/>
+      </svg>
+    </label>
+    <span class="badge" aria-hidden="true">🍓</span>
+  </div>
+  <div class="photo-btns">
+    <button class="btn small ghost" id="delpic" hidden>Hapus foto</button>
+    <input type="file" id="file" accept="image/*" hidden>
+  </div>
+  <h1>Harum Wijayanti</h1>
+  <p>Siswi SMK Ma’arif 1 Nanggulan</p>
+  <p>Calon game developer di Gamelab Indonesia 🎮</p>
+  <p style="margin-top:18px"><a class="btn" href="#projek">Lihat projekku</a></p>
+</section>
+
+<nav><a href="#tentang">Tentang</a><a href="#projek">Projek</a><a href="#kontak">Kontak</a></nav>
+
+<section id="tentang">
+  <h2>Tentang Aku</h2>
+  <p class="sub">Sedikit cerita dari balik layar</p>
+  <div class="card about">
+    <p>Halo, aku <b>Harum Wijayanti</b>, siswi SMK Ma’arif 1 Nanggulan yang saat ini sedang menimba ilmu di kelas <b>Gamelab Indonesia</b>.</p>
+    <p>Di sini aku belajar mengubah ide kecil menjadi dunia permainan yang bisa dimainkan siapa saja. Buatku, setiap baris kode seperti benih stroberi: ditanam dengan sabar, dirawat dengan senang hati, lalu tumbuh jadi sesuatu yang manis.</p>
+    <p>Aku percaya belajar tidak harus kaku. Boleh pelan, boleh salah, asal tetap berani mencoba lagi.</p>
+    <div class="chips"><span class="chip">🎮 Game Development</span><span class="chip">💻 HTML &amp; CSS</span><span class="chip">🌸 Kreatif</span><span class="chip">🍓 Pantang menyerah</span></div>
+    <div class="quote">“Pelan-pelan tumbuh, manis pada waktunya.”</div>
+  </div>
+</section>
+
+<section id="projek">
+  <h2>3 Mini Projek</h2>
+  <p class="sub">Semuanya bisa kamu mainkan langsung ya!</p>
+
+  <div class="card proj">
+    <h3>1. Tangkap Stroberi</h3>
+    <p class="d">Ketuk stroberi sebelum jatuh. Hindari ulat 🐛 ya! Waktu 30 detik.</p>
+    <div class="hud"><span>Skor: <b id="sc">0</b></span><span>Waktu: <b id="tm">30</b>s</span></div>
+    <div id="arena"><div id="overlay"><b>Siap menangkap stroberi? 🍓</b><button class="btn" id="go">Mulai main</button></div></div>
+  </div>
+
+  <div class="card proj">
+    <h3>2. Kuis Kenali Harum (4 kuis)</h3>
+    <p class="d">Pilih kuis di bawah ini: namaku, sekolahku, belajar Gamelab, atau website ini.</p>
+    <div class="tabs" id="tabs"></div>
+    <div class="bar"><i id="qbar"></i></div>
+    <div id="quiz"></div>
+  </div>
+
+  <div class="card proj">
+    <h3>3. Memory Manis</h3>
+    <p class="d">Buka dua kartu dan cari pasangan yang sama.</p>
+    <div class="hud" style="max-width:380px;margin:0 auto 10px"><span>Langkah: <b id="mv">0</b></span><button class="btn" id="rs" style="padding:6px 16px;font-size:.85rem">Acak ulang</button></div>
+    <div id="mem"></div>
+    <p id="win" class="quote" style="min-height:1.6em"></p>
+  </div>
+</section>
+
+<section id="kontak">
+  <h2>Terima Kasih</h2>
+  <p class="sub">Sudah mampir ke dunia stroberiku 🍓</p>
+</section>
+<footer>Dibuat dengan 💖 oleh Harum Wijayanti</footer>
+
+<script>
+// hujan stroberi dekoratif
+(function(){var r=document.getElementById('rain'),e=['🍓','🌸','🎀','🍓'];for(var i=0;i<10;i++){var s=document.createElement('span');s.className='float';s.textContent=e[i%4];s.style.left=(i*10+Math.random()*8)+'%';s.style.animationDuration=(10+Math.random()*10)+'s';s.style.animationDelay=(-Math.random()*15)+'s';r.appendChild(s)}})();
+
+// foto profil (ketuk bingkai untuk ganti foto)
+(function(){
+var pic=document.getElementById('pic'),ph=document.getElementById('ph'),file=document.getElementById('file'),del=document.getElementById('delpic');
+function show(src){if(src){pic.src=src;pic.hidden=false;ph.hidden=true;del.hidden=false}else{pic.hidden=true;ph.hidden=false;del.hidden=true}}
+try{show(localStorage.getItem('harumPhoto'))}catch(e){show(null)}
+file.onchange=function(){var f=file.files[0];if(!f)return;var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){var s=400,c=document.createElement('canvas'),m=Math.min(im.width,im.height);c.width=c.height=s;c.getContext('2d').drawImage(im,(im.width-m)/2,(im.height-m)/2,m,m,0,0,s,s);var d=c.toDataURL('image/jpeg',.85);show(d);try{localStorage.setItem('harumPhoto',d)}catch(e){}};im.src=r.result};r.readAsDataURL(f)};
+del.onclick=function(){show(null);try{localStorage.removeItem('harumPhoto')}catch(e){};file.value=''};
+})();
+
+// 1. GAME
+(function(){
+var ar=document.getElementById('arena'),ov=document.getElementById('overlay'),sc=document.getElementById('sc'),tm=document.getElementById('tm'),score,left,spawn,clock;
+function end(){clearInterval(spawn);clearInterval(clock);ar.querySelectorAll('.drop').forEach(function(d){d.remove()});ov.style.display='flex';ov.innerHTML='<b>Selesai! Skor kamu '+score+' 🎉</b><button class="btn" id="go">Main lagi</button>';document.getElementById('go').onclick=start}
+function pop(x,y,t){var p=document.createElement('div');p.className='pop';p.textContent=t;p.style.left=x+'px';p.style.top=y+'px';ar.appendChild(p);setTimeout(function(){p.remove()},600)}
+function drop(){var d=document.createElement('div'),bad=Math.random()<.2;d.className='drop';d.textContent=bad?'🐛':'🍓';d.style.left=Math.random()*(ar.clientWidth-44)+'px';d.style.animationDuration=(2+Math.random()*1.5)+'s';
+d.onpointerdown=function(ev){score+=bad?-3:1;if(score<0)score=0;sc.textContent=score;pop(d.offsetLeft,d.offsetTop,bad?'-3':'+1');d.remove()};
+d.onanimationend=function(){d.remove()};ar.appendChild(d)}
+function start(){score=0;left=30;sc.textContent=0;tm.textContent=30;ov.style.display='none';spawn=setInterval(drop,650);clock=setInterval(function(){left--;tm.textContent=left;if(left<=0)end()},1000)}
+document.getElementById('go').onclick=start;
+})();
+
+// 2. KUIS
+(function(){
+var CATS=[
+{n:'🌸 Namaku',q:[
+{q:'Siapa nama lengkap pemilik portofolio ini?',o:['Harum Wijayanti','Harum Wijaya','Harumi Wijayanti'],a:0},
+{q:'Apa nama belakang Harum?',o:['Lestari','Wijayanti','Rahmawati'],a:1},
+{q:'Apa arti kata “harum” dalam bahasa Indonesia?',o:['Wangi','Cepat','Besar'],a:0},
+{q:'Apa inisial nama Harum?',o:['HW','HS','AW'],a:0}]},
+{n:'🏫 Sekolahku',q:[
+{q:'Di sekolah mana Harum belajar?',o:['SMK Ma’arif 1 Nanggulan','SMA Negeri 1','MAN 2'],a:0},
+{q:'Harum bersekolah di jenis sekolah apa?',o:['SD','SMP','SMK'],a:2},
+{q:'SMK Ma’arif 1 terletak di daerah mana?',o:['Nanggulan','Jakarta Pusat','Bandung'],a:0},
+{q:'Status Harum saat ini adalah…',o:['Guru','Siswi','Dokter'],a:1}]},
+{n:'🎮 Belajar Gamelab',q:[
+{q:'Harum sedang menimba ilmu di kelas apa?',o:['Kelas Memasak','Gamelab Indonesia','Kelas Melukis'],a:1},
+{q:'Di Gamelab, Harum belajar membuat apa?',o:['Kue ulang tahun','Game','Perahu kertas'],a:1},
+{q:'Orang yang membuat game disebut…',o:['Game developer','Tukang kebun','Pilot'],a:0},
+{q:'Hasil belajar Harum dikumpulkan di…',o:['Lemari dapur','Portofolio','Kolam ikan'],a:1}]},
+{n:'💻 Website Ini',q:[
+{q:'Website portofolio ini dibuat dari apa?',o:['HTML dan CSS','Hanya Microsoft Word','Photoshop saja'],a:0},
+{q:'HTML dipakai untuk apa?',o:['Membuat struktur dan isi halaman','Memasak stroberi','Mengedit video'],a:0},
+{q:'CSS dipakai untuk apa?',o:['Menghitung nilai rapor','Mempercantik warna dan animasi','Menyimpan foto'],a:1},
+{q:'Siapa yang membuat game dan kuis bisa dimainkan?',o:['JavaScript','Kertas HVS','Kipas angin'],a:0},
+{q:'Warna utama website ini?',o:['Hitam pekat','Hijau lumut','Soft pink 🌸'],a:2}]}
+];
+var cur,i,s,box=document.getElementById('quiz'),bar=document.getElementById('qbar'),tabs=document.getElementById('tabs');
+CATS.forEach(function(c,k){var b=document.createElement('button');b.className='tab';b.textContent=c.n;b.onclick=function(){pick(k)};tabs.appendChild(b)});
+function pick(k){cur=k;i=0;s=0;tabs.querySelectorAll('.tab').forEach(function(t,j){t.classList.toggle('on',j==k)});show()}
+function show(){var Q=CATS[cur].q;bar.style.width=(i/Q.length*100)+'%';
+if(i>=Q.length){var m=s==Q.length?'Sempurna! Kamu sahabat sejati Harum! 💖':s>=Q.length*0.6?'Hebat, kamu cukup kenal aku! 🌸':'Yuk kenalan lagi lewat portofolio ini 🍓';
+box.innerHTML='<h3 style="color:var(--berry);text-align:center">Skor: '+s+'/'+Q.length+'</h3><p class="quote">'+m+'</p><p style="text-align:center"><button class="btn" id="rq">Ulangi kuis</button> <button class="btn" id="nq">Kuis berikutnya</button></p>';
+document.getElementById('rq').onclick=function(){pick(cur)};document.getElementById('nq').onclick=function(){pick((cur+1)%CATS.length)};return}
+var q=Q[i];box.innerHTML='<b>'+(i+1)+'/'+Q.length+'. '+q.q+'</b>';
+q.o.forEach(function(t,k){var b=document.createElement('button');b.className='opt';b.textContent=t;b.onclick=function(){var all=box.querySelectorAll('.opt');all.forEach(function(x){x.disabled=true});all[q.a].classList.add('ok');if(k==q.a)s++;else b.classList.add('no');setTimeout(function(){i++;show()},900)};box.appendChild(b)})}
+pick(0);
+})();
+
+// 3. MEMORY
+(function(){
+var g=document.getElementById('mem'),mv=document.getElementById('mv'),win=document.getElementById('win'),first,lock,moves,found;
+function init(){var e=['🍓','🌸','🎀','🍰','🎮','🧁'].slice(0,6);e=e.concat(e).sort(function(){return Math.random()-.5});g.innerHTML='';moves=0;found=0;first=null;lock=false;mv.textContent=0;win.textContent='';
+e.forEach(function(x){var c=document.createElement('button');c.className='c';c.setAttribute('aria-label','kartu');c.innerHTML='<div><span class="b">🍓</span><span class="fr">'+x+'</span></div>';c.dataset.v=x;c.onclick=function(){if(lock||c.classList.contains('f'))return;c.classList.add('f');if(!first){first=c;return}moves++;mv.textContent=moves;if(first.dataset.v==c.dataset.v){first.classList.add('m');c.classList.add('m');first=null;if(++found==6)win.textContent='Hore, semua pasangan ketemu dalam '+moves+' langkah! 🎉'}else{lock=true;var a=first;first=null;setTimeout(function(){a.classList.remove('f');c.classList.remove('f');lock=false},800)}};g.appendChild(c)})}
+document.getElementById('rs').onclick=init;init();
+})();
+</script>
+</body>
+</html>
